@@ -1,0 +1,71 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    {% block css %}
+        <!-- Tipo de Codificação -->
+        <meta charset="UTF-8">
+        <!-- Meta Responsive Design -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Ícone na Aba -->
+        <link rel="shortcut icon" href="http://www.itinovare.com.br/site/images/help_icon.png">
+        <!-- Até 90 caracteres -->
+        <title>Rafael Ribeiro || Ao seu dispor</title>
+        <!-- Até 153 caracteres -->
+        <meta name="description" content="Está buscando um bom desenvolvedor em Franca para construir seu website? Então acesse esse portfólio e confira nossos serviços!">
+        <!-- Removendo os Prefixos dos Navegadores -->
+        <link rel="stylesheet" href={% static 'css/reset.css' %}>
+        <!-- Estilos Gerais -->
+        <link rel="stylesheet" href={% static 'css/estilos.css' %}>
+        <!-- Ícones -->
+        <link rel="stylesheet" href={% static 'css/font-icon.css' %}>
+        <!-- Menu -->
+        <link rel="stylesheet" href={% static 'css/navbar.css' %}>
+        <!-- 'The Road so Far' -->
+        <link rel="stylesheet" href={% static 'css/about.css' %}>
+        <!-- Fonte -->
+        <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+        <script src={% static 'js/about_me/modernizr.js' %}></script>
+    {% endblock css %}
+
+</head>
+<body>
+
+    {% block main %}{% endblock main %}
+
+    <script type="text/javascript">
+        function scrollBanner() {
+            var scrollPos;
+            var headerText = document.querySelector('.header-paralax h1');
+            scrollPos = window.scrollY;
+
+            if (scrollPos <= 600) {
+                headerText.style.transform =  "translateY(" + (-scrollPos/3) +"px" + ")";
+                headerText.style.opacity = 1 - (scrollPos/600);
+            }
+        }
+
+        window.addEventListener('scroll', scrollBanner);
+    </script>
+
+    {% block js %}
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+        <!-- ScrollSpy -->
+        <script src={% static 'js/scrollspy.js' %}></script>
+        <!-- Navbar Fixed when Scrolling -->
+        <script src={% static 'js/navbar.js' %}></script>
+        <!-- Particles moving -->
+        <script src={% static 'js/particles/TweenLite.min.js' %}></script>
+        <script src={% static 'js/particles/EasePack.min.js' %}></script>
+        <script src={% static 'js/particles/rAF.js' %}></script>
+        <script src={% static 'js/particles/demo-1.js' %}></script>
+        <!-- Road so Far -->
+        <script src={% static 'js/about_me/jquery.mobile.custom.min.js' %}></script>
+        <script src={% static 'js/about_me/main.js' %}></script>
+
+    {% endblock js %}
+
+</body>
+</html>

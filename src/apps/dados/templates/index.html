@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+    <section class="header-parallax">
+        <article>
+            <hgroup>
+                <h1 class="main-title">Rafael <span class="thin">Ribeiro</span></h1>
+                <br><br>
+                <h2 class="main-subtitle">Developer</h2>
+            </hgroup>
+            <div id="large-header">
+                <canvas id="demo-canvas"></canvas>
+            </div>
+        </article>
+        <p class="conjucture">
+            <span class="chevron"></span>
+            <span class="chevron"></span>
+            <span class="chevron"></span>
+        </p>
+    </section>
+    <main>
+        <nav id="navbar" class="tabs">
+            <ul class="tabs-container">
+                <a href="#about" class="scrollspy">
+                    <li>Trajetória</li>
+                    <i data-icon=">" class="icon"></i>
+                </a>
+                <a href="#three" class="scrollspy">
+                    <li>Ipsum</li>
+                    <i data-icon="d" class="icon"></i>
+                </a>
+                <a href="#four" class="scrollspy">
+                    <li>Solicitar Orçamento</li>
+                    <i data-icon="&#xe006;" class="icon"></i>
+                </a>
+                <span class="tab-slider"></span>
+            </ul>
+        </nav>
+        {% for dados in data %}
+
+
+        <section class="about_me" id="about">
+
+            <h1 class="subtitle_sections">The road so far</h1>
+
+
+            <br>
+            <div class="timeline">
+                <div class="events-wrapper">
+                    <div class="events">
+                        <ol>
+                            <li>
+                                <a href="#0" data-date="16/01/2014" class="selected">{{ dados.dia_evento }} {{ dados.get_mes_evento_display }}</a>
+                            </li>
+                        </ol>
+
+                        <span class="filling-line" aria-hidden="true"></span>
+                    </div> <!-- .events -->
+                </div> <!-- .events-wrapper -->
+
+                <ul class="cd-timeline-navigation">
+                    <li>
+                        <a href="#0" class="prev inactive">Prev</a>
+                    </li>
+                    <li>
+                        <a href="#0" class="next">Next</a>
+                    </li>
+                </ul> <!-- .cd-timeline-navigation -->
+            </div> <!-- .timeline -->
+
+            <div class="events-content">
+                <ol>
+                    <li class="selected" data-date="16/01/2014">
+                        <h2>{{ dados.title }}</h2>
+                        <em>{{ dados.mes_evento }} {{ dados.dia_evento }}, {{ dados.ano_evento }}</em>
+                        <p>
+                        {{ dados.description }}
+                        </p>
+                    </li>
+                </ol>
+            </div> <!-- .events-content -->
+        </section>
+
+        {% endfor %}
+
+        <section class="three" id="three" style="width: 100%; height: 3000px; background: #333;">
+
+
+        </section>
+
+
+
+
+
+        <section class="four" id="four"></section>
+
+    </main>
+{% endblock main %}
