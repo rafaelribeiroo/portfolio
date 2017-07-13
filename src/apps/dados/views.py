@@ -2,8 +2,7 @@ from django.shortcuts import render
 from .models import DadoPessoal
 
 def home(request):
-    data = {}
-    data['listar_dados'] = DadoPessoal.objects.all()
+    data = DadoPessoal.objects.all()
     context = {
         'data': data
     }
