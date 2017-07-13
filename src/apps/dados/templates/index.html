@@ -37,7 +37,6 @@
                 <span class="tab-slider"></span>
             </ul>
         </nav>
-        {% for dados in data %}
 
 
         <section class="about_me" id="about">
@@ -46,15 +45,25 @@
 
 
             <br>
+
+
             <div class="timeline">
                 <div class="events-wrapper">
+
                     <div class="events">
                         <ol>
-                            <li>
-                                <a href="#0" data-date="16/01/2014" class="selected">{{ dados.dia_evento }} {{ dados.get_mes_evento_display }}</a>
-                            </li>
+                            {% for dados in data %}
+                                {% if forloop.first %}
+                                    <li>
+                                        <a href="#0" data-date="{{ dados.dia_evento }}/{{ dados.mes_evento }}/{{ dados.ano_evento }}" class="selected">{{ dados.dia_evento }} {{ dados.get_mes_evento_display|slice:":3" }}</a>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="#0" data-date="{{ dados.dia_evento }}/{{ dados.mes_evento }}/{{ dados.ano_evento }}">{{ dados.dia_evento }} {{ dados.get_mes_evento_display|slice:":3" }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
                         </ol>
-
                         <span class="filling-line" aria-hidden="true"></span>
                     </div> <!-- .events -->
                 </div> <!-- .events-wrapper -->
@@ -70,19 +79,32 @@
             </div> <!-- .timeline -->
 
             <div class="events-content">
+
                 <ol>
-                    <li class="selected" data-date="16/01/2014">
-                        <h2>{{ dados.title }}</h2>
-                        <em>{{ dados.mes_evento }} {{ dados.dia_evento }}, {{ dados.ano_evento }}</em>
-                        <p>
-                        {{ dados.description }}
-                        </p>
-                    </li>
+                    {% for dados in data %}
+                        {% if forloop.first %}
+                            <li class="selected" data-date="{{ dados.dia_evento }}/{{ dados.mes_evento }}/{{ dados.ano_evento }}">
+                                <h2>{{ dados.title }}</h2>
+                                <em>{{ dados.mes_evento }} {{ dados.dia_evento }}, {{ dados.ano_evento }}</em>
+                                <p>
+                                {{ dados.description }}
+                                </p>
+                            </li>
+                            {% else %}
+                            <li data-date="{{ dados.dia_evento }}/{{ dados.mes_evento }}/{{ dados.ano_evento }}">
+                                <h2>{{ dados.title }}</h2>
+                                <em>{{ dados.mes_evento }} {{ dados.dia_evento }}, {{ dados.ano_evento }}</em>
+                                <p>
+                                {{ dados.description }}
+                                </p>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                 </ol>
             </div> <!-- .events-content -->
         </section>
 
-        {% endfor %}
+
 
         <section class="three" id="three" style="width: 100%; height: 3000px; background: #333;">
 
