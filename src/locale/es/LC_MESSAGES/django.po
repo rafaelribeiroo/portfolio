@@ -1,0 +1,36 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-21 16:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/apps/dados/templates/index.html:6
+msgid "Rafael Ribeiro || Ao seu Dispor"
+msgstr "Rafael Ribeiro || A su Servicio"
+
+#: src/apps/dados/templates/index.html:16
+msgid "Desenvolvedor"
+msgstr "Desarrollador"
+
+#: src/apps/dados/templates/index.html:32
+#: src/apps/dados/templates/index.html:50
+msgid "Trajetória"
+msgstr "Trayectoria"
+
+#: src/apps/dados/templates/index.html:40
+msgid "Solicitar Orçamento"
+msgstr "Solicitar Presupuesto"

@@ -12,7 +12,7 @@
         <!-- Ícone na Aba -->
         <link rel="shortcut icon" href="http://www.itinovare.com.br/site/images/help_icon.png">
         <!-- Até 90 caracteres -->
-        <title>Rafael Ribeiro || Ao seu dispor</title>
+        <title>{% block title %}{% endblock title %}</title>
         <!-- Até 153 caracteres -->
         <meta name="description" content="Está buscando um bom desenvolvedor em Franca para construir seu website? Então acesse esse portfólio e confira nossos serviços!">
         <!-- Removendo os Prefixos dos Navegadores -->
@@ -28,6 +28,8 @@
         <!-- Fonte -->
         <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
         <script src={% static 'js/about_me/modernizr.js' %}></script>
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% endblock css %}
 
 </head>
@@ -51,8 +53,6 @@
     </script>
 
     {% block js %}
-        <!-- jQuery -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
         <!-- ScrollSpy -->
         <script src={% static 'js/scrollspy.js' %}></script>
         <!-- Navbar Fixed when Scrolling -->
