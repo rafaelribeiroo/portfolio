@@ -167,13 +167,3 @@ hgroup .main-title, .main-subtitle {
     background: C5C7C8;
     height: auto;
 }
-
-#back2Top {
-    z-index: 99;
-    display: none;
-    cursor: pointer;
-    position: fixed;
-    bottom: 50px;
-    right: 30px;
-    color: #008FB2;
-}

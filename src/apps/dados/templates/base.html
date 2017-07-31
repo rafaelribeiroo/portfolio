@@ -27,7 +27,6 @@
         <link rel="stylesheet" href={% static 'css/about.css' %}>
         <!-- Fonte -->
         <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
-        <script src={% static 'js/about_me/modernizr.js' %}></script>
         <!-- jQuery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% endblock css %}
@@ -38,18 +37,36 @@
     {% block main %}{% endblock main %}
 
     <script type="text/javascript">
-        function scrollBanner() {
-            var scrollPos;
-            var headerText = document.querySelector('.header-paralax h1');
-            scrollPos = window.scrollY;
+		function scrollBanner() {
+    	  var scrollPos;
+    	  var headerText = document.querySelector('.header-parallax hgroup');
+    	  scrollPos = window.scrollY;
 
-            if (scrollPos <= 600) {
-                headerText.style.transform =  "translateY(" + (-scrollPos/3) +"px" + ")";
-                headerText.style.opacity = 1 - (scrollPos/600);
+    	  if (scrollPos <= 600)
+    	      headerText.style.opacity = 1 - (scrollPos/600);
+
+    	}
+
+    	window.addEventListener('scroll', scrollBanner);
+	</script>
+    <script type="text/javascript">
+        /*Scroll to top when arrow up clicked BEGIN*/
+        $(window).scroll(function() {
+            var height = $(window).scrollTop();
+            if (height > 200) {
+                $('#back2Top').fadeIn();
+            } else {
+                $('#back2Top').fadeOut();
             }
-        }
+        });
+        $(document).ready(function() {
+            $("#back2Top").click(function(event) {
+                event.preventDefault();
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                return false;
+            });
 
-        window.addEventListener('scroll', scrollBanner);
+        });
     </script>
 
     {% block js %}
