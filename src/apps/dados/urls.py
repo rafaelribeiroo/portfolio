@@ -1,6 +1,8 @@
-from django.conf.urls import url
+from django.urls import path
 from .views import home
 
+
+app_name = 'dados'
 urlpatterns = [
-    url(r'^$', home),
+    path('', home, name='homepage'),
 ]
