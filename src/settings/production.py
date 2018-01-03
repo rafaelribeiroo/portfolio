@@ -4,7 +4,7 @@ import dj_database_url
 
 DEBUG = config_decouple('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['rafaelribeiroo.herokuapp.com', '.rafaelribeiroo.com']
 
 ADMINS = [
     ('Rafael Ribeiro', 'pereiraribeirorafael@gmail.com')
