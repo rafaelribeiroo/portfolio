@@ -2,9 +2,9 @@ from .local import *
 import dj_database_url
 
 
-DEBUG = config_decouple('DEBUG', default=False, cast=bool)
+DEBUG = config_decouple('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['rafaelribeiroo.herokuapp.com', '.rafaelribeiroo.com']
+ALLOWED_HOSTS = ['']
 
 ADMINS = [
     ('Rafael Ribeiro', 'pereiraribeirorafael@gmail.com')
