@@ -5,7 +5,7 @@ clean:
 clearMigrations:
 	cd src/apps/dados && rm -rf migrations/	
 
-runLocal:
+run:
 	python manage.py runserver 127.0.0.1:8000 --settings=src.settings.local
 
 runProduction:
@@ -13,9 +13,11 @@ runProduction:
 
 migrate:
 	python manage.py migrate
+	python manage.py dados
 
 migrations:
 	python manage.py makemigrations
+	python manage.py makemigrations dados
 
 user:
 	python manage.py createsuperuser
