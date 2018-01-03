@@ -2,6 +2,9 @@ clean:
 	find . -type d -name __pycache__ -exec rm -r {} \+
 	find . -name "*pyc" -exec rm -rf {} \;i
 
+clearMigrations:
+	cd src/apps/dados && rm -rf migrations/	
+
 run:
 	python manage.py runserver 0.0.0.0:8000
 
