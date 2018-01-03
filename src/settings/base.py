@@ -26,7 +26,7 @@ SECRET_KEY = config_decouple('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config_decouple('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = []
 
 
 # Application definition
