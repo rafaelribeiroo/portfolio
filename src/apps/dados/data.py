@@ -10,7 +10,7 @@ SET = 9
 OUT = 10
 NOV = 11
 DEZ = 12
-LISTA_MESES = (
+LISTA_MESES = [
     (JAN, 'Janeiro'),
     (FEV, 'Fevereiro'),
     (MAR, 'Março'),
@@ -23,4 +23,4 @@ LISTA_MESES = (
     (OUT, 'Outubro'),
     (NOV, 'Novembro'),
     (DEZ, 'Dezembro'),
-)
+]

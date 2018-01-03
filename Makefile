@@ -1,3 +1,7 @@
+clean:
+	find . -type d -name __pycache__ -exec rm -r {} \+
+	find . -name "*pyc" -exec rm -rf {} \;i
+
 run:
 	python manage.py runserver 0.0.0.0:8000
 
@@ -9,6 +13,9 @@ migrations:
 
 user:
 	python manage.py createsuperuser
+
+test:
+	python manage.py test
 
 shell:
 	python manage.py shell
