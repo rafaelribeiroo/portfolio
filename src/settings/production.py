@@ -1,4 +1,4 @@
-from .base import *
+from .local import *
 import dj_database_url
 
 

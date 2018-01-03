@@ -6,7 +6,7 @@ clearMigrations:
 	cd src/apps/dados && rm -rf migrations/	
 
 runLocal:
-	python manage.py runserver 127.0.0.1:8000 --settings=src.settings.base
+	python manage.py runserver 127.0.0.1:8000 --settings=src.settings.local
 
 runProduction:
 	python manage.py runserver 0.0.0.0:8000 --settings=src.settings.production
