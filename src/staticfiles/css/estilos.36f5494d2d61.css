@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    font-family: 'Raleway';
+    line-height: 1.25;
+}
+
+/* Usado para sobrepor o position fixed do evento Parallax na Header */
+main {
+    position: relative;
+    top: 80vh;
+}
+
+/* Efeito Parallax */
+.header-parallax {
+    position: fixed;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/bg.eecd130004cf.jpg");
+    background-size: cover;
+    box-shadow:          inset 0 0 10px 0 #000000;
+    -webkit-box-shadow:  inset 0 0 10px 0 #000000;
+     -moz-box-shadow:    inset 0 0 10px 0 #000000;
+}
+
+/* Título Principal */
+hgroup .main-title, .main-subtitle {
+    position: absolute;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.main-title {
+    color: #f9f1e9;
+    top: 50%;
+    left: 50%;
+    text-transform: uppercase;
+    font-size: 4.2em;
+    font-weight: 800;
+    -webkit-transform: translate3d(-50%,-50%,0);
+            transform: translate3d(-50%,-50%,0);
+}
+
+.main-title .thin {
+    font-weight: 200;
+}
+
+.main-subtitle {
+    color: #FFD700;
+    top: 60%;
+    left: 46%;
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.subtitle_sections {
+    font-family: 'Raleway';
+    font-weight: bolder;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3em;
+    /* Order of padding: top, right, bottom and left */
+    padding: 25px 0 15px 0;
+    text-shadow:
+    1px 0px 1px #ccc, 0px 1px 1px #eee,
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
+}
+
+@media (min-width: 800px) {
+    nav ul li {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .main-title {
+        font-size: 3em;
+    }
+    .main-subtitle {
+        font-size: 1em;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+}
+
+/* Arrow Down */
+.conjucture {
+    position: absolute;
+    top: 80%
+}
+
+.chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #F3F3F3;
+}
+
+.chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+    25% {
+        opacity: 1;
+
+    }
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+/* Section about me */
+.about_me {
+    background: #F7F9FB;
+    height: auto;
+}
+
+.knowledges {
+    background: C5C7C8;
+    height: auto;
+}
+
+#back2Top {
+    z-index: 99;
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    color: #008FB2;
+}
