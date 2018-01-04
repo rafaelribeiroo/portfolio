@@ -3,6 +3,7 @@ try:
 except ImportError:
     pass
 import dj_database_url
+from whitenoise import WhiteNoise
 
 DEBUG = config_decouple('DEBUG', default=False, cast=bool)
 
