@@ -4,10 +4,6 @@ except ImportError:
     pass
 import dj_database_url
 
-MIDDLEWARE += [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-]
-
 DEBUG = config_decouple('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['rafaelribeiroo.herokuapp.com', '.rafaelribeiroo.com']
