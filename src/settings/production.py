@@ -2,7 +2,7 @@ from .local import *
 import dj_database_url
 
 
-DEBUG = config_decouple('DEBUG', default=True, cast=bool)
+DEBUG = config_decouple('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['rafaelribeiroo.herokuapp.com', '.rafaelribeiroo.com']
 
@@ -13,6 +13,7 @@ ADMINS = [
 MANAGERS = ADMINS
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
