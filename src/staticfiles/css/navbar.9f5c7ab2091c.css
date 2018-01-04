@@ -1,0 +1,78 @@
+/* Fixing the navbar in top when scrolling */
+.navbar-fixed {
+    position: fixed;
+    top: -3em;
+}
+
+nav {
+    width: 100%; /* Menu Horizontal with 100% of width, adjust to small smartphones */
+    z-index: 9;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #333;
+
+    /* font-family: 'Raleway'; */
+}
+
+nav ul { /* List of menu, flexbox */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+     -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: #00bf8f;
+    background: -webkit-linear-gradient(to right, #00bf8f, #001510);
+    background: linear-gradient(to right, #00bf8f, #001510);
+    z-index: 1;
+    -webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Items of Menu */
+nav ul a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+     -webkit-box-pack: center;
+      justify-content: center;
+       -ms-flex-align: center;
+        -ms-flex-pack: center;
+          align-items: center;
+    -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+    font-size: 0.8rem;
+}
+
+/* When Mouse overriding */
+nav ul a:hover {
+    color: white;
+    background: #00392A;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.tab-slider {
+    position: absolute;
+    bottom: auto; /* Ou 0 px */
+    width: 0;
+    height: 6px;
+    background: #F3F3F3;
+    -webkit-transition: left 0.3s ease;
+    transition: left 0.3s ease;
+}
